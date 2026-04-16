@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="text-center mb-4">
+            <div class="display-6 text-primary mb-2">
+                <i class="bi bi-pencil-square"></i>
+            </div>
+            <h2 class="fw-bold">Editar Registro</h2>
+            <p class="text-muted">Actualiza la información de la persona seleccionada</p>
+        </div>
+
+        <form action="/update" method="post" class="needs-validation">
+            <input type="hidden" name="id" value="{{persona.id}}">
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold text-secondary">
+                    <i class="bi bi-person me-1"></i> Nombre Completo
+                </label>
+                <input type="text" 
+                       class="form-control form-control-lg" 
+                       name="nombre" 
+                       value="{{persona.nombre}}" 
+                       placeholder="Ej. Juan Pérez" 
+                       required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label fw-semibold text-secondary">
+                    <i class="bi bi-telephone me-1"></i> Teléfono
+                </label>
+                <input type="text" 
+                       class="form-control form-control-lg" 
+                       name="telefono" 
+                       value="{{persona.telefono}}" 
+                       placeholder="Ej. 70000000" 
+                       required>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold text-secondary">
+                    <i class="bi bi-calendar-event me-1"></i> Fecha de Nacimiento
+                </label>
+                <input type="date" 
+                       class="form-control form-control-lg" 
+                       name="fecha_nacimiento" 
+                       value="{{persona.fecha_nacimiento}}" 
+                       required>
+                <div class="form-text text-muted">Formato estándar: día/mes/año</div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
+                <a href="/" class="btn btn-light border px-4">
+                    Cancelar
+                </a>
+                <button type="submit" class="btn btn-primary px-5 shadow-sm">
+                    <i class="bi bi-save me-2"></i> Guardar Cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
