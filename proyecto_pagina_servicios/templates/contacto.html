@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-contacto">
+    <div class="contacto-wrapper">
+        <div class="contacto-info">
+            <h2>Hablemos</h2>
+            <p>¿Tienes dudas o necesitas un presupuesto personalizado? Déjanos tus datos y te contactaremos en menos de 24 horas.</p>
+            <ul class="info-lista">
+                <li><strong> Ubicación:</strong> El Alto, La Paz</li>
+                <li><strong>Teléfono:</strong> +591 700 00000</li>
+                <li><strong>Email:</strong> info@selim.com</li>
+            </ul>
+        </div>
+
+        <div class="contacto-form-box">
+            {% if enviado %}
+            <div class="alerta-exito">
+                <h3>¡Mensaje enviado!</h3>
+                <p>Gracias por contactarnos. Pronto nos pondremos en contacto contigo.</p>
+                <a href="/contacto" class="btn-puro">Enviar otro</a>
+            </div>
+            {% else %}
+            <form action="/contacto" method="POST" class="formulario">
+                <div class="grupo-input">
+                    <label>Nombre Completo</label>
+                    <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="grupo-input">
+                    <label>Correo Electrónico</label>
+                    <input type="email" name="email" placeholder="juan@ejemplo.com" required>
+                </div>
+                <div class="grupo-input">
+                    <label>Servicio de Interés</label>
+                    <form action="/contacto" method="GET" class="mini-form-redireccion">
+                    <div class="grupo-select-directo">
+                        <select name="servicio_interes">
+                            <option value="hogar">Limpieza de Hogar</option>
+                            <option value="oficina">Oficinas</option>
+                            <option value="vidrios">Ventanas</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <button type="submit" class="btn-enviar">Cotizar Ahora</button>
+                    </div>
+                </form>
+                </div>
+                <div class="grupo-input">
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" rows="5" placeholder="Cuéntanos más..." required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

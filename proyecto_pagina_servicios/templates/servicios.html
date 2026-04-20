@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-servicios">
+    <h2 class="titulo-pagina">Nuestras Especialidades</h2>
+    <div class="grid-servicios">
+        {% for s in servicios %}
+        <div class="card">
+            <div class="card-img" style="background-image: url('{{ s.img }}');"></div>
+            <div class="card-info">
+                <h3>{{ s.nombre }}</h3>
+                <p>{{ s.desc }}</p>
+                <button class="btn-card" onclick="window.location.href='/contacto'">Cotizar</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
