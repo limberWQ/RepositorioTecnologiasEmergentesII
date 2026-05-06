@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    registrar
+{% endblock %}
+
+{% block content %}
+    <h1>Registra notas</h1>
+
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value="{{nombre.id}}" >
+        <tr>
+            <td>
+                nombre:
+            </td>
+            <td>
+                <input type="text" name="nombre" value="{{nombre.nombre}}">
+            </td>
+        </tr><br><br>
+        <tr>
+            <td>
+                nota:
+            </td>
+            <td>
+                <input type="number" max="100" min="0" step="0.1" name="nota" value="{{nombre.nota}}">
+            </td>
+        </tr><br><br>
+        <button type="submit" >registrar</button>
+    </form>
+{% endblock %}
+

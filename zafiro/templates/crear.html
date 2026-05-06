@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    registrar
+{% endblock %}
+
+{% block content %}
+    <h1>Registra notas</h1>
+
+    <form action="/registro" method="POST">
+        <tr>
+            <td>
+                nombre:
+            </td>
+            <td>
+                <input type="text" name="nombre">
+            </td>
+        </tr><br><br>
+        <tr>
+            <td>
+                nota:
+            </td>
+            <td>
+                <input type="number" name="nota">
+            </td>
+        </tr><br><br>
+        <button type="submit" >registrar</button>
+    </form>
+{% endblock %}
+

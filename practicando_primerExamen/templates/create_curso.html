@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Añadir nuevo curso</h1>
+    <form action="/insertar_curso" method="post">
+        <div>
+            <label for="">Nombre de Curso:</label>
+            <input type="text" name="curso_nombre" >
+        </div>
+        <div>
+            <label for="">Descripcion:</label>
+            <input type="text" name="descripcion" >
+        </div>
+        <button type="submit">crear curso</button>
+    </form>
+    <a href="/">regresar</a>
+{% endblock %}

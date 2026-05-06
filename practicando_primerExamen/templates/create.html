@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Nuevo registro</h1>
+<form action="/insertar" method="post">
+    <div>
+        <label for="">Nombre:</label>
+        <input type="text" name="nombre" >
+    </div><br>
+    <div>
+        <label for="">Apellido paterno:</label>
+        <input type="text" name="apellido_pat">
+    </div><br>
+    <div>
+        <label for="">Apellido materno:</label>
+        <input type="text" name="apellido_mat">
+    </div><br>
+    <div>
+        <label for="">Celular:</label>
+        <input type="tel" name="celular" >
+    </div><br>
+    <button type="submit">Insertar</button>
+
+</form>
+<a href="/">regresar</a>
+{% endblock %}

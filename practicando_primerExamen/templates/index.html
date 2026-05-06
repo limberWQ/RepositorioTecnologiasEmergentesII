@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Listado de personas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellido Paterno</td>
+            <td>Apellido Materno</td>
+            <td>Celular</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in personas %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido_pat}}</td>
+            <td>{{item.apellido_mat}}</td>
+            <td>{{item.celular}}</td>
+            <td>
+                <a href="/edicion/{{ item.id }}">Editar estudiante</a>
+            </td>
+            <td>
+                <a href="/eliminar/{{ item.id }}">eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>
+                <a href="/create">Insertar estudiante</a>
+            </td>
+            <td>
+                <a href="/inscripciones">Inscribir a curso</a>
+            </td>
+            <td>
+                <a href="/create_curso">crear curso</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

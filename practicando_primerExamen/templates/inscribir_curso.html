@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Inscribir estudiante</h1>
+
+<form action="/inscripciones" method="post">
+    <label for="">estudiante:</label>
+    <select>
+    
+        {% for item in lista %}
+            <option value="id">
+                {{item.id}} {{item.nombre}} {{item.celular}}
+            </option>
+        {% endfor %}
+    </select>
+    <label for="">Curso</label>
+    <select >
+        
+    </select>
+</form>
+<a href="/">regresar</a>
+
+{% endblock %}

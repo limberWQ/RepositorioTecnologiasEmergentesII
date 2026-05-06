@@ -91,7 +91,7 @@ def actualizar_registro():
 # eliminar registro
 def eliminar_registro():
     with app.app_context():
-        registro = Product.query.filter_by(id = 4).first()
+        registro = Product.query.filter_by(id = 3).first()
 
         if registro:
             db.session.delete(registro)
